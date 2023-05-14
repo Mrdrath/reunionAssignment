@@ -3,7 +3,9 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const multer = require('multer');
-const { User, Post, Comment } = require('./models');
+const User = require('../models/user.js');
+const Post = require('../models/post.js');
+const Comment= require('../models/comment.js');
 
 const app = express();
 app.use(express.json());

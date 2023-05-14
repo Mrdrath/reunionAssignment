@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const verifyToken = require('./verifyToken');
+const verifyToken = require('../middleware/verifyToken');
 
 // Sample posts data
 const posts = [

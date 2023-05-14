@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const config = require('./config');
-const authenticationMiddleware = require('./middleware/auth');
-const authenticationRoutes = require('./routes/auth');
+const authenticationMiddleware = require('./middleware/verifyToken.js');
+const authenticationRoutes = require('./routes/auth.js');
 const postRoutes = require('./routes/posts');
 const userRoutes = require('./routes/users');
 
@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(authenticationMiddleware);
 
 // Set up routes
-app.use('/api/authenticate', authenticationRoutes);
+app.use('/api/authenticate', authenticationMiddleware);
 app.use('/api/posts', postRoutes);
 app.use('/api/users', userRoutes);
 
